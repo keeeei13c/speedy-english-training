@@ -41,9 +41,12 @@ export function useChat() {
 
       console.log('Response status:', response.status);
       
-      // レスポンスのヘッダー情報をログに出力
-      const headers = Object.fromEntries([...response.headers.entries()]);
-      console.log('Response headers:', headers);
+      // ヘッダー情報をログに出力（TypeScriptエラーを避けるために修正）
+      const headerObj: Record<string, string> = {};
+      response.headers.forEach((value, key) => {
+        headerObj[key] = value;
+      });
+      console.log('Response headers:', headerObj);
 
       // レスポンスがJSONでない場合にテキストとして読み取る
       if (!response.headers.get('content-type')?.includes('application/json')) {
