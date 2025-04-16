@@ -11,7 +11,7 @@ interface ChatInputProps {
 }
 
 export function ChatInput({ onSend, isLoading }: ChatInputProps) {
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState('start');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
