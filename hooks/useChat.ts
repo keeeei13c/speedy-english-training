@@ -22,8 +22,6 @@ export function useChat() {
       };
       setMessages((prev) => [...prev, userMessage]);
 
-      // Send to API - 正しいパスに修正
-      console.log('Sending request to:', '/api/chat');
       console.log('Request body:', JSON.stringify({ message: content }));
 
       const response = await fetch('/api/chat', {

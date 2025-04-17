@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 
 export const dynamic = 'force-dynamic';
+export const runtime = 'edge';
 
 // DeepSeek APIレスポンスの型定義
 interface DeepSeekResponse {
